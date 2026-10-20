@@ -1,0 +1,50 @@
+{
+  "name": "dsh-usage-stats",
+  "version": "0.1.0",
+  "description": "All-session token usage statistics for DeepSeek Harness.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XEsx630/dsh-usage-stats.git"
+  },
+  "homepage": "https://github.com/XEsx630/dsh-usage-stats#readme",
+  "bugs": {
+    "url": "https://github.com/XEsx630/dsh-usage-stats/issues"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "token-usage",
+    "usage-statistics",
+    "dashboard"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "preview.png",
+    "preview-models.png",
+    "README.md"
+  ],
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "immediately": false
+    }
+  }
+}
